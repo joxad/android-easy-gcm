@@ -28,6 +28,4 @@ dependencies {
     compile libs.playServicesGcm
 }
 
-apply plugin: 'com.github.dcendents.android-maven'
-
-group='com.github.joxad'
+apply from: new File('../gradletasks/bintray_upload.gradle')

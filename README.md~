@@ -3,22 +3,15 @@ Use this library to add GCM to your project, only in a few minutes !
 
 # Installation
 
-Top Level Gradle :
-```
-allprojects {
-    repositories {
-        maven {
-            url "http://dl.bintray.com/joxad/maven"
-        }
+```gradle
+repositories {
+    maven {
+        url "https://jitpack.io"
     }
 }
-```
 
-Project's build.gradle
-
-```
 dependencies {
-    compile 'com.github.joxad:android-easy-gcm:1.0.2'
+    compile 'com.github.joxad.EasyGcm:1.0.0'
 }
 ```
 

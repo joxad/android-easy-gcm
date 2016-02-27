@@ -1,1 +1,1 @@
-include ':lib', ':sample', ':sender'
+include ':android-easy-gcm', ':sample', ':sender'
