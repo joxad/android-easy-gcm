@@ -8,9 +8,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
@@ -24,16 +21,5 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-//root-project
-ext {
-    gcmVersion = '8.4.0'
-    gsonVersion = '2.4'
-    okhttpVersion = '2.4.0'
-    libs = [
-            playServicesBase: ('com.google.android.gms:play-services-base:' + gcmVersion),
-            playServicesGcm : ('com.google.android.gms:play-services-gcm:' + gcmVersion),
-            gson            : ('com.google.code.gson:gson:' + gsonVersion),
-            okhttp          : ('com.squareup.okhttp:okhttp:' + okhttpVersion)
-    ]
-
-}
+apply from: 'gradletasks/versioning.gradle'
+apply from: 'gradletasks/imports.gradle'

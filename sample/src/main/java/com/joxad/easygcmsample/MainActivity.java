@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         EasyGcm.setPushListener(new IPushListener() {
             @Override
             public void onReceive(Push push) {
-
+                Log.d(MainActivity.class.getSimpleName(), push.getData().toString());
             }
         });
 
