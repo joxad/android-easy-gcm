@@ -9,6 +9,7 @@ import com.joxad.easygcm.error.PlayServiceNotAvailableException;
 import com.joxad.easygcm.listener.IPushListener;
 import com.joxad.easygcm.listener.ITokenListener;
 import com.joxad.easygcm.model.Push;
+import com.joxad.easygcm.notification.EasyNotification;
 import com.joxad.easygcm.utils.EasyGcmPrefs;
 import com.joxad.easygcm.utils.Logger;
 import com.joxad.easygcm.utils.PlayServiceUtils;
@@ -34,6 +35,7 @@ public class EasyGcm {
         gcm = GoogleCloudMessaging.getInstance(context);
         senderId = id;
         Logger.enable(logEnabled);
+        new EasyNotification.Builder().context(context).build();
         new Prefs.Builder()
                 .setContext(context)
                 .setMode(ContextWrapper.MODE_PRIVATE)
