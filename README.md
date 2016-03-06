@@ -56,3 +56,8 @@ EasyGcm.setPushListener(new IPushListener() {
 
 ```
 
+## Show an Android Notification 
+
+```
+EasyNotification.show(1,EasyNotification.generate(null,"Title",R.drawable.common_ic_googleplayservices,"Message","SummaryText",true));
+```
