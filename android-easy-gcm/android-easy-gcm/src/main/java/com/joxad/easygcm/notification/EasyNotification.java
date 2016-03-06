@@ -6,7 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.annotation.IntegerRes;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
@@ -35,14 +35,14 @@ public class EasyNotification {
      *                      intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
      *                      <p/>
      *                      PendingIntent pendingIntent = PendingIntent.getActivity(context, RESULTCODE, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-     * @param title
-     * @param resourceIcon
-     * @param message
-     * @param summaryText
-     * @param autocancel
+     * @param title , title of the notification
+     * @param resourceIcon , the left icon visible
+     * @param message , message displayed to the user
+     * @param summaryText ,
+     * @param autocancel , true to cancel on click
      * @return a notification to show
      */
-    public Notification generate(final PendingIntent pendingIntent, final String title, @IntegerRes int resourceIcon, @Nullable final String message, @Nullable final String summaryText, boolean autocancel) {
+    public static Notification generate(final PendingIntent pendingIntent, final String title, @DrawableRes int resourceIcon, @Nullable final String message, @Nullable final String summaryText, boolean autocancel) {
 
         NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
         if (message != null)
@@ -69,6 +69,11 @@ public class EasyNotification {
 
     }
 
+    /***
+     * Show a notification on the device
+     * @param id
+     * @param notification
+     */
     public static void show(int id, Notification notification) {
         notificationManager.notify(id, notification);
     }

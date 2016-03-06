@@ -9,6 +9,7 @@ import com.joxad.easygcm.error.PlayServiceNotAvailableException;
 import com.joxad.easygcm.listener.IPushListener;
 import com.joxad.easygcm.listener.ITokenListener;
 import com.joxad.easygcm.model.Push;
+import com.joxad.easygcm.notification.EasyNotification;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        EasyNotification.show(1, EasyNotification.generate(null, "Title", R.drawable.common_ic_googleplayservices, "Message", "SummaryText", true));
         try {
             new EasyGcm.Builder().context(this).senderId(getString(R.string.app_senderid)).enableLog(true).build();
         } catch (PlayServiceNotAvailableException e) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onReceive(Push push) {
                 Log.d(MainActivity.class.getSimpleName(), push.getData().toString());
+                EasyNotification.show(1,EasyNotification.generate(null,"Title",R.drawable.common_ic_googleplayservices,"Message","SummaryText",true));
             }
         });
 
