@@ -17,12 +17,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EasyNotification.show(1, EasyNotification.generate(null, "Title", R.drawable.common_ic_googleplayservices, "Message", "SummaryText", true));
         try {
             new EasyGcm.Builder().context(this).senderId(getString(R.string.app_senderid)).enableLog(true).build();
         } catch (PlayServiceNotAvailableException e) {
             e.printStackTrace();
         }
+        EasyNotification.show(1, EasyNotification.generate(null, "Title", R.drawable.common_ic_googleplayservices, "Message", "SummaryText", true));
 
         EasyGcm.setTokenListener(new ITokenListener() {
             @Override
