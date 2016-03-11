@@ -3,6 +3,8 @@ package com.joxad.easygcm;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.joxad.easygcm.error.PlayServiceNotAvailableException;
@@ -100,6 +102,7 @@ public class EasyGcm {
 
         private Context mContext;
         private String mSenderId;
+        private Integer mSenderIdRes = null;
         private boolean logEnable = false;
 
         /**
@@ -108,7 +111,7 @@ public class EasyGcm {
          * @param context the application context
          * @return the {@link com.} object.EasyGcm
          */
-        public Builder context(final Context context) {
+        public Builder context(@NonNull final Context context) {
             mContext = context;
             return this;
         }
@@ -119,8 +122,19 @@ public class EasyGcm {
          * @param senderId the identification of the GCM
          * @return the {@link com.} object.EasyGcm
          */
-        public Builder senderId(final String senderId) {
+        public Builder senderId(@NonNull final String senderId) {
             this.mSenderId = senderId;
+            return this;
+        }
+
+        /**
+         * Set the Context used to instantiate the EasyGcm
+         *
+         * @param senderIdRes the resource identification of the GCM
+         * @return the {@link com.} object.EasyGcm
+         */
+        public Builder senderId(@StringRes final int senderIdRes) {
+            this.mSenderIdRes = senderIdRes;
             return this;
         }
 
@@ -145,8 +159,10 @@ public class EasyGcm {
             if (mContext == null) {
                 throw new RuntimeException("Context not set, please set context");
             }
-            if (mSenderId == null) {
+            if (mSenderId == null && mSenderIdRes == null) {
                 throw new RuntimeException("Sender Id not set, please set the id");
+            } else {
+                mSenderId = (mSenderId != null) ? mSenderId : mContext.getString(mSenderIdRes);
             }
 
 
