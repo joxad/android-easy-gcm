@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         try {
             new EasyGcm.Builder().context(this).senderId(getString(R.string.app_senderid)).enableLog(true).build();
+            // Could use
+            // new EasyGcm.Builder().context(this).senderId(R.string.app_senderid).enableLog(true).build();
         } catch (PlayServiceNotAvailableException e) {
             e.printStackTrace();
         }
