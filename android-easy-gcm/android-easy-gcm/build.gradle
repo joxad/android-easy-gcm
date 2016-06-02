@@ -22,10 +22,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.0'
-    compile 'com.pixplicity.easyprefs:library:1.8.1@aar'
     compile libs.gson
     compile libs.playServicesBase
     compile libs.playServicesGcm
+    compile libs.logger
+    compile libs.easyPrefs
 }
 
 apply from: new File('../gradletasks/bintray_upload.gradle')

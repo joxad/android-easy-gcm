@@ -4,11 +4,12 @@ buildscript {
     repositories {
         jcenter()
         maven { url "http://dl.bintray.com/pixplicity/maven" }
+        maven { url "https://jitpack.io" }
 
     }
     dependencies {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'com.android.tools.build:gradle:2.1.0'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
     }
 }
@@ -16,6 +17,8 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven { url "https://jitpack.io" }
+
     }
 }
 

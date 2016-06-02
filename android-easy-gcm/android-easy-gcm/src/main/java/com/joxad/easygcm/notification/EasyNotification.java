@@ -56,6 +56,8 @@ public class EasyNotification {
                 new NotificationCompat.Builder(context)
                         .setSmallIcon(resourceIcon)
                         .setLargeIcon(bigIcon)
+                        .setContentTitle(title)
+                        .setContentText(message)
                         .setTicker(title)
                         .setStyle(bigText)
                         .setDefaults(Notification.DEFAULT_ALL)
@@ -89,7 +91,7 @@ public class EasyNotification {
          * Set the Context used to instantiate the EasyNotification
          *
          * @param context the application context
-         * @return the {@link com.} object.EasyGcm
+         * @return the {@link com.joxad.easygcm.EasyGcm}
          */
         public Builder context(final Context context) {
             mContext = context;

@@ -1,13 +1,16 @@
-
 //root-project
 ext {
+    easyPrefV = "1.8.1"
     gcmVersion = '8.4.0'
     gsonVersion = '2.4'
     okhttpVersion = '2.4.0'
+    loggerVersion = '1.12'
     libs = [
+            easyPrefs       : "com.pixplicity.easyprefs:library:$easyPrefV@aar",
             playServicesBase: ('com.google.android.gms:play-services-base:' + gcmVersion),
             playServicesGcm : ('com.google.android.gms:play-services-gcm:' + gcmVersion),
             gson            : ('com.google.code.gson:gson:' + gsonVersion),
+            logger          : "com.github.orhanobut:logger:$loggerVersion",
             okhttp          : ('com.squareup.okhttp:okhttp:' + okhttpVersion)
     ]
 

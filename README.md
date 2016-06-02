@@ -2,12 +2,13 @@
 Use this library to add GCM to your project, only in a few minutes !
 
 # Version:
-1.0.4
+1.0.5
+
 
 # Installation
 
 Top Level Gradle :
-```
+```groovy
 allprojects {
     repositories {
         maven {
@@ -65,6 +66,11 @@ EasyGcm.setPushListener(new IPushListener() {
 EasyNotification.show(1,EasyNotification.generate(null,"Title",R.drawable.common_ic_googleplayservices,"Message","SummaryText",true));
 ```
 
+## Test your push
+
+This website is usefull to easyly test : http://apns-gcm.bryantan.info/
+
+Just put your sender key from console developer , and your device token (visible in the logs).
 
 ## ToDO
 
