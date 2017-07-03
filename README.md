@@ -1,3 +1,7 @@
+#!!! DEPRECATED !!!
+
+Google has now FirebaseGoogleMessaging. If I find the time i'll done the necessary to update the libs
+
 # EasyGcm
 Use this library to add GCM to your project, only in a few minutes !
 
