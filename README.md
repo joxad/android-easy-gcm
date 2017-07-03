@@ -1,4 +1,4 @@
-#!!! DEPRECATED !!!
+# !!! DEPRECATED !!!
 
 Google has now FirebaseGoogleMessaging. If I find the time i'll done the necessary to update the libs
 
